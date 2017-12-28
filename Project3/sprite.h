@@ -24,4 +24,4 @@ private:
 	SDL_Rect source_rect;
 };
 
-#endif // !SPRITE_H_
+#endif

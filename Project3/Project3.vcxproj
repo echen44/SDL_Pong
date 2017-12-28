@@ -22,6 +22,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="paddle.cpp" />
     <ClCompile Include="sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
