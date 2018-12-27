@@ -12,7 +12,7 @@ Sprite::Sprite(const std::string file_path,
 	SDL_Surface* sprite_sheet_surface = SDL_LoadBMP(file_path.c_str());
 
 	// Color key the surface before making it a texture
-	SDL_SetColorKey(sprite_sheet_surface, SDL_TRUE, SDL_MapRGB(sprite_sheet_surface->format, 0, 0, 0));
+	SDL_SetColorKey(sprite_sheet_surface, SDL_TRUE, SDL_MapRGB(sprite_sheet_surface->format, 2, 0, 0));
 	//
 	sprite_sheet_ = SDL_CreateTextureFromSurface(graphics.getRenderer(), sprite_sheet_surface);
 	SDL_FreeSurface(sprite_sheet_surface);

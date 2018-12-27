@@ -1,20 +1,11 @@
 #include "graphics.h"
 #include "SDL.h"
+#include "game.h"
 #include <iostream>
 
 struct Sprite;
-
-namespace{
-	const int screenWidth = 640;
-	const int screenHeight = 480;
-	const int paddleHeight = 80;
-	const int paddleWidth = 20;
-}
-
-int paddle1x = 0;
-int paddle1y = (screenHeight / 2) - (paddleHeight / 2);
-int paddle2x = screenHeight - paddleWidth;
-int paddle2y = (screenHeight / 2) - (paddleHeight / 2);
+const int screenWidth = 640;
+const int screenHeight = 480;
 
 Graphics::Graphics(){
 	window_ = SDL_CreateWindow(
@@ -23,7 +14,7 @@ Graphics::Graphics(){
 		SDL_WINDOWPOS_UNDEFINED,
 		screenWidth,
 		screenHeight,
-		SDL_WINDOW_SHOWN
+		SDL_WINDOW_RESIZABLE
 	);
 	surface_ = SDL_GetWindowSurface(window_);
 	renderer_ = SDL_CreateRenderer(window_, -1, SDL_RENDERER_ACCELERATED);

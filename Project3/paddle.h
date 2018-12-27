@@ -3,6 +3,7 @@
 #define PADDLE_H_
 #include <string>
 #include <memory>
+
 #include "SDL.h"
 #include "sprite.h"
 
@@ -10,18 +11,21 @@
 
 struct Sprite;
 
+const int paddleHeight = 80;
+const int paddleWidth = 20;
+
 struct Paddle {
-	Paddle(Sprite& sprite, int x, int y, int w, int h);
+	Paddle(Graphics& graphics, int x, int y, int w, int h);
 	~Paddle();
 	int getPaddleHeight();
 	int getPaddleWidth();
 	int getPaddleX();
 	int getPaddleY();
-private:
-	std::shared_ptr<Sprite> sprite;
-protected:
+	void draw(Graphics& graphics, int x, int y);
 	//use a seperate rect for collisions for future skeletons
 	SDL_Rect collision_rect;
+private:
+	std::shared_ptr<Sprite> sprite;
 };
 
 #endif
